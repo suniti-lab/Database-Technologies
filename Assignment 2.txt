@@ -1,0 +1,82 @@
+Query for 'like':
+
+1. select subject name "oracle" from subjects table.
+Query- select * from books where book_Name='oracle';
+
+2. select subject name starts whith 'j'.
+Query - select * from books where book_Name like 'j%';
+
+3. select subject name which contains ".net" .
+Query - select * from books where book_Name like '%.net';
+
+4. select author name ends whith 'er'.
+Query - select * from books where author_name like '%er';
+
+5. select publishers name which contains "hill".
+Query - select * from books where publishers like '%hill';
+========================================================================
+Queries for relational operator:
+
+1. select title from title table having price less than 500.
+Query - select * from books where cost<500;
+
+2. select title from title table published before '3 april'.
+Query - select * from books where published_date<'2019-04-03';
+
+3. select subject name from subject having id as 'java' or 'jee'.
+Query - select * from books where book_name='java' or 'jee';
+
+4. select author name from author table id greater than '103'.
+Query - select book_Name from books where book_no>103;
+
+5. select all from title having titleid as 101 or price > 400.
+Query - select * from books where book_no=2 or cost>400;
+
+========================================================================
+IN operator:
+
+6. select all from publishers table  where publisher name is ('TECHMEDIA', 'WROX');
+Query - select * from books where publishers in('TECHMEDIA', 'WROX');
+
+=======================================================================
+aggregate function:
+
+1. select maximum price from titles table.
+Query - select max(cost) from books;
+
+2. select average importance from titleauthors. 
+Query - select avg(cost) from books;
+
+3. select number of records from author table.
+Query - select count(*) from books;
+
+4. select sum of prices of all books.
+Query - select sum(cost) from books;
+
+========================================================================
+Date:
+
+1. select year from system date.
+Query - select CURDATE();
+
+2. select month from system date.
+Query - select month(CURDATE());
+
+=======================================================================
+
+DML:
+
+create table Employee with emp_id (number),emp_name(char(50)) and insert some value.
+
+1. Add one column name 'dept_id ' in table name 'Employee';
+Query - alter table emp add column departmnt_id int(5);
+
+2. Change the datatype of column 'char' from tablename 'Employee' to 'varchar2'.
+Query - alter table emp modify column emp_name varchar(50);
+
+3. update name of employee to 'Scott'
+Query - ALTER TABLE emp RENAME TO scott;
+
+4. truncate the table.
+Query - truncate emp_copy;
+

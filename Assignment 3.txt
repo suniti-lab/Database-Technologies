@@ -1,0 +1,29 @@
+
+========================Order by, group by,having=====================
+Order by:
+1. select all from authors sort ascending by author name.
+Query - select * from emp order by author_name asc;
+
+2. select all from publishers sort descending by publisher name.
+Query - select * from emp order by publisher_name desc;
+
+group by:
+
+1. select all data and sum of salary from employee and group according to deptid.
+Query - select dept_id, sum(emp_sal) from emp group by dept_id;
+
+2. select deptid and sum of salary where salary is greater than 17000 and group by deptid.
+Query - select dept_id, sum(emp_sal) from emp where emp_sal>17000 group by dept_id;
+
+Having:
+
+1. select deptid and sum of salary where sum of salary is greater than 18000 and grup by deptid. 
+Query - select dept_id, sum(emp_sal) from emp group by dept_id having sum(emp_sal)>18000;
+
+2. select deptid and sum of salary where sum of salary is less than 20000 and grup by deptid.
+Query -  select dept_id, sum(emp_sal) from emp group by dept_id having sum(emp_sal)<20000;
+
+
+
+
+

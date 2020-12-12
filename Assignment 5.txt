@@ -1,0 +1,87 @@
+1. Write a Procedure that accepts values of two non-zero numbers using IN parameter and perform addition, subtraction, multiplication, division and print.
+Query - delimiter $$
+        create  procedure sp1(IN a int, IN b int)
+        begin 
+        select a+b;
+        select a-b;
+        select a*b;
+        select a/b;
+        end $$
+calling- call sp1(2,4);
+
+2. Write a Procedure to print the string in REVERSE order. Take the input using IN parameter. (Ex .Database , o/p :esabatad)
+Query- delimiter $$
+       create  procedure sp2(IN str varchar(10))
+       begin 
+       set @str=(select reverse(str));
+       end $$
+
+       set @str='database';
+       select @str;
+       call sp2(@str)
+       select @str as rev;
+
+3. Write a Procedure to display top 5 employee based on highest salary and display employee number, employee name and salary.
+Query- delimiter $$
+       create  procedure sp3(IN high_sal int(6))
+       begin 
+       SELECT * FROM tab_for_procedure ORDER BY salary DESC limit 5; 
+       end $$
+  
+       call sp3(1);
+
+4. Write a Procedure to create table emp_test with e_id integer, e_name varchar(10), e_joining_date date as columns.
+Query - delimiter $$
+        create  procedure sp4(IN create_table int(6))
+        begin 
+        create table emp_test(e_id integer, e_name varchar(10),                 e_joining date);
+        end $$
+
+        call sp4(3); 
+
+5. Write a Procedure to add a department row in the DEPT table with the following values for columns
+Query - delimiter $$
+        create  procedure sp5(IN insert_table int)
+        begin 
+        insert into emp_test values(1, 'jiya', '2019-06-12'), (21,              'piya', '2020-03-25');
+        end $$
+        call sp5(3);
+
+6. Write a program that declares an integer variable called num, assigns a value to it and print, the value of the variable itself, its square, and its cube.
+Query - DELIMITER $$
+        CREATE PROCEDURE SP6(IN VAR INT)
+        BEGIN
+        SET @NUM =VAR;
+        SELECT @NUM, POWER(@NUM,2) AS SQUARE, POWER (@NUM,3) AS CUBIC;
+        END $$
+        CALL SP6(5);
+
+7. Write a program that declares an integer variable assign a value to it and display it using OUT parameter.
+Query - delimiter $$
+        CREATE PROCEDURE SP7(OUT ANS INT)
+        BEGIN
+        DECLARE NUM int;
+        SET NUM=5;
+        SELECT NUM  INTO ANS ;
+        END $$
+
+        CALL SP7(@ANS);
+        SELECT @ANS;
+
+8. Write a program that demonstrates the usage of IN and OUT parameters.
+Query - delimiter $$
+        CREATE PROCEDURE SP8(IN X INT,OUT STR VARCHAR(50))
+        BEGIN
+        SELECT concat(emp_test.e_id,' IS FROM         ',tab_for_procedure.pname) INTO STR  FROM emp_test INNER JOIN         tab_for_procedure  ON emp_test.e_id=tab_for_procedure.e_id         WHERE emp_test.e_id=1 AND tab_for_procedure.e_id=1;
+        END $$
+
+        CALL SP8(10,@STR);
+        SELECT @STR;
+
+
+
+
+
+
+
+

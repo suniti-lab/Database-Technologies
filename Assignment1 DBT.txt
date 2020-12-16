@@ -81,3 +81,59 @@ mysql> select * from issue;
 +--------------+------------------+
 |           11 | computer science |
 +--------------+------------------+
+
+4.
+Task / Problems:
+1)	Create the table Member, Books and Issue without any constraints as mentioned in the schema description above.
+2)	View the structure of the tables.
+3)	Delete/Drop the column Penalty_Amount from Member
+4)	Insert following data in table Member:
+
+Member ID	Member Name	Member Address	Acc_Open_Date	Membership_type
+1	Richa Sharma	Pune	10-Dec-05	Lifetime
+2	Garima Sen	Pune	Current date	Annual
+
+5)	Insert at least 5 records with suitable data and save it.
+6)	Insert data in Book table as follows:
+
+Book_No	Book Name	Author	Cost	Category
+101	Let us C	Denis Ritchie	450	System
+102	Oracle – Complete Ref	Loni	550	Database
+103	Mastering SQL	Loni	250	Database
+104	PL SQL-Ref	ScottUrman	750	Database
+7)	View the data in the tables using simple SQL query.
+8)	Modify the price of book with id 103 to Rs 300 and category to RDBMS
+9)	Drop table Issue.
+10)	Again Create table Issue and insert following data into Issue table. Note leave the column Return_Date blank
+
+Lib_Issue_Id	Book No	Member ID	Issue Date	Return Date
+7001	101	1	10-Dec-06	
+7002	102	2	25-Dec-06	
+7003	104	1	15-Jan-06	
+7004	101	1	04-Jul-06	
+7005	104	2	15-Nov-06	
+7006	101	3	18-Feb-06	
+*/
+
+
+/*
+desc issue;
+desc books;
+desc member;
+
+alter table member drop column Penality_Amount;
+
+insert into Member values(1,"Richa Sharma","Pune","2005-12-10","Lifetime"),(2,"Garima Sen","Pune","2005-12-10","Annual");
+
+insert into books values(101,"Let us C","Denis Ritchie",450,"System"),(102,"Oracle- Complete Ref","Loni",550,"Database"),
+(103,"Mastering SQL","Loni",250,"Database"),(104,"PL SQL-Ref","ScottUrman",750,"Database");
+
+select * from books;
+select * from member;
+select * from issue;
+
+update books set Cost=300, Category="RDBMS" where Book_No=103;
+
+alter table issue drop column Return_Date;
+alter table issue add column Return_Date varchar(20);
+*/
